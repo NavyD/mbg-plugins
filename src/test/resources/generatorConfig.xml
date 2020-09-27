@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <properties resource="generator.properties"/>
+
+    <context id="mysql-user-center" targetRuntime="MyBatis3" defaultModelType="flat">
+        <property name="javaFileEncoding" value="UTF-8"/>
+<!--        super mapper 继承，支持泛型-->
+        <plugin type="xyz.navyd.mbg.plugin.SuperMapperClientPlugin">
+            <property name="superMapper" value="xyz.navyd.mbg.dao.BaseMapper"/>
+            <property name="hasGenericEntity" value="true"/>
+        </plugin>
+
+        <plugin type="xyz.navyd.mbg.plugin.LombokPlugin">
+            <property name="data" value="true"/>
+            <property name="EqualsAndHashCode" value="true"/>
+            <property name="EqualsAndHashCode.callSuper" value="true"/>
+            <!-- superBuilder 应该用 noArgsConstructor保证无参构造器不会异常            -->
+            <property name="superBuilder" value="true"/>
+            <property name="noArgsConstructor" value="true" />
+            <property name="toString" value="true"/>
+            <property name="toString.callSuper" value="true"/>
+        </plugin>
+        <!-- 为模型生成序列化方法-->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <!--生成mapper.xml时覆盖原文件-->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+
+<!--        仅添加sql中remark到字段上-->
+        <commentGenerator type="xyz.navyd.mbg.CommentGenerator">
+            <property name="suppressAllComments" value="false" />
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="${db.driverClass}"
+                        connectionURL="${db.url}"
+                        userId="${db.username}"
+                        password="${db.password}">
+<!--            fix在mysql8.xxx中保证仅读取其它系统数据库table，-->
+            <property name="nullCatalogMeansCurrent" value="true" />
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+            <property name="useJSR310Types" value="true" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="test.model" targetProject="src/test/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="false" />
+            <property name="rootClass" value="xyz.navyd.mbg.entity.BaseEntity"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper"  targetProject="src/test/resources">
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+
+<!--        使用继承super mapper方法 不生成任何方法-->
+        <javaClientGenerator type="xyz.navyd.mbg.DisableAllMethodJavaClientGenerator" targetPackage="test.dao" targetProject="src/test/java">
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+
+        <table tableName="%"
+               enableCountByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               enableUpdateByExample="true">
+<!--            <property name="useActualColumnNames" value="true"/>-->
+            <generatedKey column="id" sqlStatement="MySQL" identity="true" />
+<!--            <columnOverride column="DATE_FIELD" property="startDate" />-->
+<!--            <ignoreColumn column="FRED" />-->
+<!--            <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />-->
+        </table>
+
+    </context>
+</generatorConfiguration>
