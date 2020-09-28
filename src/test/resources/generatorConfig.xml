@@ -5,6 +5,7 @@
 
 <generatorConfiguration>
     <properties resource="generator.properties"/>
+<!--    <classPathEntry location="/home/navyd/Workspaces/projects/content-sharing/sharing-common/target/classes/"/>-->
 
     <context id="mysql-user-center" targetRuntime="MyBatis3" defaultModelType="flat">
         <property name="javaFileEncoding" value="UTF-8"/>
@@ -52,7 +53,7 @@
         <javaModelGenerator targetPackage="test.model" targetProject="src/test/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="false" />
-            <property name="rootClass" value="xyz.navyd.mbg.entity.BaseEntity"/>
+            <property name="rootClass" value="xyz.navyd.mbg.entity.BaseEntit"/>
         </javaModelGenerator>
 
         <sqlMapGenerator targetPackage="mapper"  targetProject="src/test/resources">
@@ -60,7 +61,9 @@
         </sqlMapGenerator>
 
 <!--        使用继承super mapper方法 不生成任何方法-->
-        <javaClientGenerator type="xyz.navyd.mbg.DisableAllMethodJavaClientGenerator" targetPackage="test.dao" targetProject="src/test/java">
+        <javaClientGenerator type="xyz.navyd.mbg.DisableAllMethodJavaClientGenerator"
+                             targetPackage="test.dao"
+                             targetProject="src/test/java">
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
 
