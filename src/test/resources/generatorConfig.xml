@@ -44,8 +44,8 @@
 <!--            fix在mysql8.xxx中保证仅读取其它系统数据库table，-->
             <property name="nullCatalogMeansCurrent" value="true" />
         </jdbcConnection>
-
-        <javaTypeResolver >
+<!--        自定义type resolver-->
+        <javaTypeResolver type="xyz.navyd.mbg.MyJavaTypeResolver">
             <property name="forceBigDecimals" value="false" />
             <property name="useJSR310Types" value="true" />
         </javaTypeResolver>
@@ -53,7 +53,7 @@
         <javaModelGenerator targetPackage="test.model" targetProject="src/test/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="false" />
-            <property name="rootClass" value="xyz.navyd.mbg.entity.BaseEntit"/>
+            <property name="rootClass" value="xyz.navyd.mbg.entity.BaseEntity" />
         </javaModelGenerator>
 
         <sqlMapGenerator targetPackage="mapper"  targetProject="src/test/resources">
@@ -67,17 +67,11 @@
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
 
-        <table tableName="%"
-               enableCountByExample="true"
-               enableDeleteByExample="true"
-               enableSelectByExample="true"
-               enableUpdateByExample="true">
+        <table tableName="%" >
 <!--            <property name="useActualColumnNames" value="true"/>-->
             <generatedKey column="id" sqlStatement="MySQL" identity="true" />
-<!--            <columnOverride column="DATE_FIELD" property="startDate" />-->
-<!--            <ignoreColumn column="FRED" />-->
-<!--            <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />-->
+<!--            is_original => isOriginal to original => getOriginal-->
+            <columnRenamingRule searchString="is_" replaceString=""/>
         </table>
-
     </context>
 </generatorConfiguration>

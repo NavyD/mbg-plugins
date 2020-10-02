@@ -16,6 +16,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mapper/UserInfoMapper.xml"/>
+        <mapper resource="mapper/ShareInfoMapper.xml"/>
     </mappers>
 </configuration>

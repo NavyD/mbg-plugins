@@ -47,7 +47,7 @@ public class GeneratorTest {
         InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         Long id = 1L;
-        Class<BaseMapper<BaseEntity>> clazz = (Class<BaseMapper<BaseEntity>>) Class.forName("test.dao.UserInfoMapper");
+        Class<BaseMapper<BaseEntity>> clazz = (Class<BaseMapper<BaseEntity>>) Class.forName("test.dao.ShareInfoMapper");
         try (SqlSession session = sqlSessionFactory.openSession()) {
             var mapper = session.getMapper(clazz);
             var entity = mapper.selectByPrimaryKey(id);
