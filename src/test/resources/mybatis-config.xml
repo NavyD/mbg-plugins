@@ -4,6 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <properties resource="generator.properties"/>
+    <typeHandlers>
+        <typeHandler handler="xyz.navyd.mbg.dao.typehandler.MoneyTypeHandler"/>
+    </typeHandlers>
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>

@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
+import org.joda.money.Money;
 import xyz.navyd.mbg.entity.BaseEntity;
 
 /**
@@ -98,14 +99,14 @@ public class PmsProduct extends BaseEntity implements Serializable {
      *
      * @mbg.generated
      */
-    private Boolean recommanded;
+    private Boolean recommended;
 
     /**
      * 审核状态：0->未审核；1->审核通过
      *
      * @mbg.generated
      */
-    private Boolean verrified;
+    private Boolean verified;
 
     /**
      * 排序
@@ -126,14 +127,14 @@ public class PmsProduct extends BaseEntity implements Serializable {
      *
      * @mbg.generated
      */
-    private BigDecimal price;
+    private Money price;
 
     /**
      * 促销价格
      *
      * @mbg.generated
      */
-    private BigDecimal promotionPrice;
+    private Money promotionPrice;
 
     /**
      * 赠送的成长值
@@ -168,7 +169,7 @@ public class PmsProduct extends BaseEntity implements Serializable {
      *
      * @mbg.generated
      */
-    private BigDecimal originalPrice;
+    private Money originalPrice;
 
     /**
      * 库存

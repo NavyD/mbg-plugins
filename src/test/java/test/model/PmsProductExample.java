@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import org.joda.money.Money;
 
 public class PmsProductExample {
     /**
@@ -886,123 +887,123 @@ public class PmsProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andRecommandedIsNull() {
-            addCriterion("is_recommanded is null");
+        public Criteria andRecommendedIsNull() {
+            addCriterion("is_recommended is null");
             return (Criteria) this;
         }
 
-        public Criteria andRecommandedIsNotNull() {
-            addCriterion("is_recommanded is not null");
+        public Criteria andRecommendedIsNotNull() {
+            addCriterion("is_recommended is not null");
             return (Criteria) this;
         }
 
-        public Criteria andRecommandedEqualTo(Boolean value) {
-            addCriterion("is_recommanded =", value, "recommanded");
+        public Criteria andRecommendedEqualTo(Boolean value) {
+            addCriterion("is_recommended =", value, "recommended");
             return (Criteria) this;
         }
 
-        public Criteria andRecommandedNotEqualTo(Boolean value) {
-            addCriterion("is_recommanded <>", value, "recommanded");
+        public Criteria andRecommendedNotEqualTo(Boolean value) {
+            addCriterion("is_recommended <>", value, "recommended");
             return (Criteria) this;
         }
 
-        public Criteria andRecommandedGreaterThan(Boolean value) {
-            addCriterion("is_recommanded >", value, "recommanded");
+        public Criteria andRecommendedGreaterThan(Boolean value) {
+            addCriterion("is_recommended >", value, "recommended");
             return (Criteria) this;
         }
 
-        public Criteria andRecommandedGreaterThanOrEqualTo(Boolean value) {
-            addCriterion("is_recommanded >=", value, "recommanded");
+        public Criteria andRecommendedGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("is_recommended >=", value, "recommended");
             return (Criteria) this;
         }
 
-        public Criteria andRecommandedLessThan(Boolean value) {
-            addCriterion("is_recommanded <", value, "recommanded");
+        public Criteria andRecommendedLessThan(Boolean value) {
+            addCriterion("is_recommended <", value, "recommended");
             return (Criteria) this;
         }
 
-        public Criteria andRecommandedLessThanOrEqualTo(Boolean value) {
-            addCriterion("is_recommanded <=", value, "recommanded");
+        public Criteria andRecommendedLessThanOrEqualTo(Boolean value) {
+            addCriterion("is_recommended <=", value, "recommended");
             return (Criteria) this;
         }
 
-        public Criteria andRecommandedIn(List<Boolean> values) {
-            addCriterion("is_recommanded in", values, "recommanded");
+        public Criteria andRecommendedIn(List<Boolean> values) {
+            addCriterion("is_recommended in", values, "recommended");
             return (Criteria) this;
         }
 
-        public Criteria andRecommandedNotIn(List<Boolean> values) {
-            addCriterion("is_recommanded not in", values, "recommanded");
+        public Criteria andRecommendedNotIn(List<Boolean> values) {
+            addCriterion("is_recommended not in", values, "recommended");
             return (Criteria) this;
         }
 
-        public Criteria andRecommandedBetween(Boolean value1, Boolean value2) {
-            addCriterion("is_recommanded between", value1, value2, "recommanded");
+        public Criteria andRecommendedBetween(Boolean value1, Boolean value2) {
+            addCriterion("is_recommended between", value1, value2, "recommended");
             return (Criteria) this;
         }
 
-        public Criteria andRecommandedNotBetween(Boolean value1, Boolean value2) {
-            addCriterion("is_recommanded not between", value1, value2, "recommanded");
+        public Criteria andRecommendedNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("is_recommended not between", value1, value2, "recommended");
             return (Criteria) this;
         }
 
-        public Criteria andVerrifiedIsNull() {
-            addCriterion("is_verrified is null");
+        public Criteria andVerifiedIsNull() {
+            addCriterion("is_verified is null");
             return (Criteria) this;
         }
 
-        public Criteria andVerrifiedIsNotNull() {
-            addCriterion("is_verrified is not null");
+        public Criteria andVerifiedIsNotNull() {
+            addCriterion("is_verified is not null");
             return (Criteria) this;
         }
 
-        public Criteria andVerrifiedEqualTo(Boolean value) {
-            addCriterion("is_verrified =", value, "verrified");
+        public Criteria andVerifiedEqualTo(Boolean value) {
+            addCriterion("is_verified =", value, "verified");
             return (Criteria) this;
         }
 
-        public Criteria andVerrifiedNotEqualTo(Boolean value) {
-            addCriterion("is_verrified <>", value, "verrified");
+        public Criteria andVerifiedNotEqualTo(Boolean value) {
+            addCriterion("is_verified <>", value, "verified");
             return (Criteria) this;
         }
 
-        public Criteria andVerrifiedGreaterThan(Boolean value) {
-            addCriterion("is_verrified >", value, "verrified");
+        public Criteria andVerifiedGreaterThan(Boolean value) {
+            addCriterion("is_verified >", value, "verified");
             return (Criteria) this;
         }
 
-        public Criteria andVerrifiedGreaterThanOrEqualTo(Boolean value) {
-            addCriterion("is_verrified >=", value, "verrified");
+        public Criteria andVerifiedGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("is_verified >=", value, "verified");
             return (Criteria) this;
         }
 
-        public Criteria andVerrifiedLessThan(Boolean value) {
-            addCriterion("is_verrified <", value, "verrified");
+        public Criteria andVerifiedLessThan(Boolean value) {
+            addCriterion("is_verified <", value, "verified");
             return (Criteria) this;
         }
 
-        public Criteria andVerrifiedLessThanOrEqualTo(Boolean value) {
-            addCriterion("is_verrified <=", value, "verrified");
+        public Criteria andVerifiedLessThanOrEqualTo(Boolean value) {
+            addCriterion("is_verified <=", value, "verified");
             return (Criteria) this;
         }
 
-        public Criteria andVerrifiedIn(List<Boolean> values) {
-            addCriterion("is_verrified in", values, "verrified");
+        public Criteria andVerifiedIn(List<Boolean> values) {
+            addCriterion("is_verified in", values, "verified");
             return (Criteria) this;
         }
 
-        public Criteria andVerrifiedNotIn(List<Boolean> values) {
-            addCriterion("is_verrified not in", values, "verrified");
+        public Criteria andVerifiedNotIn(List<Boolean> values) {
+            addCriterion("is_verified not in", values, "verified");
             return (Criteria) this;
         }
 
-        public Criteria andVerrifiedBetween(Boolean value1, Boolean value2) {
-            addCriterion("is_verrified between", value1, value2, "verrified");
+        public Criteria andVerifiedBetween(Boolean value1, Boolean value2) {
+            addCriterion("is_verified between", value1, value2, "verified");
             return (Criteria) this;
         }
 
-        public Criteria andVerrifiedNotBetween(Boolean value1, Boolean value2) {
-            addCriterion("is_verrified not between", value1, value2, "verrified");
+        public Criteria andVerifiedNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("is_verified not between", value1, value2, "verified");
             return (Criteria) this;
         }
 
@@ -1136,52 +1137,52 @@ public class PmsProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andPriceEqualTo(BigDecimal value) {
+        public Criteria andPriceEqualTo(Money value) {
             addCriterion("price =", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceNotEqualTo(BigDecimal value) {
+        public Criteria andPriceNotEqualTo(Money value) {
             addCriterion("price <>", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceGreaterThan(BigDecimal value) {
+        public Criteria andPriceGreaterThan(Money value) {
             addCriterion("price >", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceGreaterThanOrEqualTo(BigDecimal value) {
+        public Criteria andPriceGreaterThanOrEqualTo(Money value) {
             addCriterion("price >=", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceLessThan(BigDecimal value) {
+        public Criteria andPriceLessThan(Money value) {
             addCriterion("price <", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceLessThanOrEqualTo(BigDecimal value) {
+        public Criteria andPriceLessThanOrEqualTo(Money value) {
             addCriterion("price <=", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceIn(List<BigDecimal> values) {
+        public Criteria andPriceIn(List<Money> values) {
             addCriterion("price in", values, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceNotIn(List<BigDecimal> values) {
+        public Criteria andPriceNotIn(List<Money> values) {
             addCriterion("price not in", values, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceBetween(BigDecimal value1, BigDecimal value2) {
+        public Criteria andPriceBetween(Money value1, Money value2) {
             addCriterion("price between", value1, value2, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceNotBetween(BigDecimal value1, BigDecimal value2) {
+        public Criteria andPriceNotBetween(Money value1, Money value2) {
             addCriterion("price not between", value1, value2, "price");
             return (Criteria) this;
         }
@@ -1196,52 +1197,52 @@ public class PmsProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andPromotionPriceEqualTo(BigDecimal value) {
+        public Criteria andPromotionPriceEqualTo(Money value) {
             addCriterion("promotion_price =", value, "promotionPrice");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionPriceNotEqualTo(BigDecimal value) {
+        public Criteria andPromotionPriceNotEqualTo(Money value) {
             addCriterion("promotion_price <>", value, "promotionPrice");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionPriceGreaterThan(BigDecimal value) {
+        public Criteria andPromotionPriceGreaterThan(Money value) {
             addCriterion("promotion_price >", value, "promotionPrice");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionPriceGreaterThanOrEqualTo(BigDecimal value) {
+        public Criteria andPromotionPriceGreaterThanOrEqualTo(Money value) {
             addCriterion("promotion_price >=", value, "promotionPrice");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionPriceLessThan(BigDecimal value) {
+        public Criteria andPromotionPriceLessThan(Money value) {
             addCriterion("promotion_price <", value, "promotionPrice");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionPriceLessThanOrEqualTo(BigDecimal value) {
+        public Criteria andPromotionPriceLessThanOrEqualTo(Money value) {
             addCriterion("promotion_price <=", value, "promotionPrice");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionPriceIn(List<BigDecimal> values) {
+        public Criteria andPromotionPriceIn(List<Money> values) {
             addCriterion("promotion_price in", values, "promotionPrice");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionPriceNotIn(List<BigDecimal> values) {
+        public Criteria andPromotionPriceNotIn(List<Money> values) {
             addCriterion("promotion_price not in", values, "promotionPrice");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionPriceBetween(BigDecimal value1, BigDecimal value2) {
+        public Criteria andPromotionPriceBetween(Money value1, Money value2) {
             addCriterion("promotion_price between", value1, value2, "promotionPrice");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionPriceNotBetween(BigDecimal value1, BigDecimal value2) {
+        public Criteria andPromotionPriceNotBetween(Money value1, Money value2) {
             addCriterion("promotion_price not between", value1, value2, "promotionPrice");
             return (Criteria) this;
         }
@@ -1506,52 +1507,52 @@ public class PmsProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andOriginalPriceEqualTo(BigDecimal value) {
+        public Criteria andOriginalPriceEqualTo(Money value) {
             addCriterion("original_price =", value, "originalPrice");
             return (Criteria) this;
         }
 
-        public Criteria andOriginalPriceNotEqualTo(BigDecimal value) {
+        public Criteria andOriginalPriceNotEqualTo(Money value) {
             addCriterion("original_price <>", value, "originalPrice");
             return (Criteria) this;
         }
 
-        public Criteria andOriginalPriceGreaterThan(BigDecimal value) {
+        public Criteria andOriginalPriceGreaterThan(Money value) {
             addCriterion("original_price >", value, "originalPrice");
             return (Criteria) this;
         }
 
-        public Criteria andOriginalPriceGreaterThanOrEqualTo(BigDecimal value) {
+        public Criteria andOriginalPriceGreaterThanOrEqualTo(Money value) {
             addCriterion("original_price >=", value, "originalPrice");
             return (Criteria) this;
         }
 
-        public Criteria andOriginalPriceLessThan(BigDecimal value) {
+        public Criteria andOriginalPriceLessThan(Money value) {
             addCriterion("original_price <", value, "originalPrice");
             return (Criteria) this;
         }
 
-        public Criteria andOriginalPriceLessThanOrEqualTo(BigDecimal value) {
+        public Criteria andOriginalPriceLessThanOrEqualTo(Money value) {
             addCriterion("original_price <=", value, "originalPrice");
             return (Criteria) this;
         }
 
-        public Criteria andOriginalPriceIn(List<BigDecimal> values) {
+        public Criteria andOriginalPriceIn(List<Money> values) {
             addCriterion("original_price in", values, "originalPrice");
             return (Criteria) this;
         }
 
-        public Criteria andOriginalPriceNotIn(List<BigDecimal> values) {
+        public Criteria andOriginalPriceNotIn(List<Money> values) {
             addCriterion("original_price not in", values, "originalPrice");
             return (Criteria) this;
         }
 
-        public Criteria andOriginalPriceBetween(BigDecimal value1, BigDecimal value2) {
+        public Criteria andOriginalPriceBetween(Money value1, Money value2) {
             addCriterion("original_price between", value1, value2, "originalPrice");
             return (Criteria) this;
         }
 
-        public Criteria andOriginalPriceNotBetween(BigDecimal value1, BigDecimal value2) {
+        public Criteria andOriginalPriceNotBetween(Money value1, Money value2) {
             addCriterion("original_price not between", value1, value2, "originalPrice");
             return (Criteria) this;
         }

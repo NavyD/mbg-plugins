@@ -2,6 +2,7 @@ package xyz.navyd.mbg;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.Properties;
 
@@ -10,6 +11,8 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.apache.ibatis.type.JdbcType;
+import org.joda.money.Money;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -19,12 +22,14 @@ import org.mybatis.generator.internal.DefaultShellCallback;
 import test.dao.PmsProductMapper;
 import test.model.PmsProduct;
 import xyz.navyd.mbg.dao.BaseMapper;
+import xyz.navyd.mbg.dao.typehandler.MoneyTypeHandler;
 import xyz.navyd.mbg.entity.BaseEntity;
 
 
 @Slf4j
 public class GeneratorTest {
 
+    @BeforeAll
     static void generate() throws Exception {
         //MBG 执行过程中的警告信息
         var warnings = new ArrayList<String>();
@@ -49,10 +54,10 @@ public class GeneratorTest {
     @Test
     void basics() throws Exception {
         InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-//        generate();
+        SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(inputStream);
+        factory.getConfiguration().getTypeHandlerRegistry().register(MoneyTypeHandler.class);
         Long id = 1L;
-        try (SqlSession session = sqlSessionFactory.openSession()) {
+        try (SqlSession session = factory.openSession()) {
             var mapper = session.getMapper(PmsProductMapper.class);
             var entity = mapper.selectByPrimaryKey(id);
             Assertions.assertTrue(entity.isPresent());
@@ -64,7 +69,8 @@ public class GeneratorTest {
             log.debug("object: {}", o);
             Assertions.assertEquals(o.getDeleted().getClass(), Boolean.class);
             Assertions.assertEquals(o.getFresh().getClass(), Boolean.class);
-            Assertions.assertEquals(o.getVerrified().getClass(), Boolean.class);
+            Assertions.assertEquals(o.getVerified().getClass(), Boolean.class);
+            Assertions.assertEquals(o.getPrice().getClass(), Money.class);
         }
     }
 }

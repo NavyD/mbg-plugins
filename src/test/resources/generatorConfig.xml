@@ -48,7 +48,8 @@
         <javaTypeResolver type="xyz.navyd.mbg.MyJavaTypeResolver">
             <property name="forceBigDecimals" value="false" />
             <property name="useJSR310Types" value="true" />
-            <property name="prefixIsToBoolean" value="true"/>
+            <property name="regex.^is_.*" value="javaType=Boolean"/>
+            <property name="regex..*price$" value="javaType=org.joda.money.Money"/>
         </javaTypeResolver>
 
         <javaModelGenerator targetPackage="test.model" targetProject="src/test/java">
