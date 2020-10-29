@@ -16,6 +16,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mapper/ShareInfoMapper.xml"/>
+        <mapper resource="mapper/PmsProductMapper.xml"/>
     </mappers>
 </configuration>
